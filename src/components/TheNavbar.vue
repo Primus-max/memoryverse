@@ -1,10 +1,10 @@
 <template>
   <nav class="fixed w-full z-50 bg-black/10 backdrop-blur-xl border-b border-white/10">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- <div class="flex items-center space-x-3">
-        <LogoIcon />
+      <div class="flex items-center space-x-3">
+        <!-- <LogoIcon /> -->
         <span class="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">MemoryVerse</span>
-      </div> -->
+      </div>
       <div class="hidden md:flex space-x-8">
         <a v-for="link in navLinks" :key="link.href" :href="link.href" class="nav-link">{{ link.text }}</a>
       </div>

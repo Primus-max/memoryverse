@@ -14,12 +14,7 @@
     <nav class="fixed w-full z-50 bg-black/10 backdrop-blur-xl border-b border-white/10">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <div class="flex items-center space-x-2">
-          <div class="logo-container w-10 h-10 relative">
-            <div class="dna-helix absolute inset-0">
-              <div class="dna-strand-1"></div>
-              <div class="dna-strand-2"></div>
-            </div>
-          </div>
+          <LogoIcon />
           <span class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">MemoryVerse</span>
         </div>
         <div class="hidden md:flex space-x-8">
@@ -238,13 +233,7 @@
         <div class="container mx-auto px-4">
           <div class="grid md:grid-cols-4 gap-8">
             <div>
-              <div class="flex items-center space-x-2 mb-6">
-                <div class="logo-container w-8 h-8 relative">
-                  <div class="dna-helix absolute inset-0">
-                    <div class="dna-strand-1"></div>
-                    <div class="dna-strand-2"></div>
-                  </div>
-                </div>
+              <div class="flex items-center space-x-2 mb-6">                
                 <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">MemoryVerse</span>
               </div>
               <p class="text-gray-400">Оживляем воспоминания с помощью современных технологий</p>
@@ -300,6 +289,8 @@ import { onMounted } from 'vue';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+import LogoIcon from '../components/LogoIcon.vue';
 
 gsap.registerPlugin(ScrollTrigger)
 
