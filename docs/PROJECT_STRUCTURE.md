@@ -5,7 +5,6 @@
 ### [memoryverse-frontend](https://github.com/memoryverse/frontend)
 Веб-клиент платформы
 - Vue.js 3
-- TypeScript
 - Tailwind CSS
 - GSAP
 - Pinia
@@ -31,7 +30,6 @@ API сервер и бизнес-логика
 Десктопное приложение
 - Electron
 - Vue.js 3
-- TypeScript
 - SQLite
 
 ### [memoryverse-ml](https://github.com/memoryverse/ml)

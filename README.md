@@ -9,7 +9,6 @@ MemoryVerse Frontend - клиентская часть платформы для
 ## Технологический стек
 
 - Vue.js 3 с Composition API
-- TypeScript для типобезопасности
 - Tailwind CSS для стилизации
 - GSAP для анимаций
 - Pinia для управления состоянием
@@ -19,7 +18,7 @@ MemoryVerse Frontend - клиентская часть платформы для
 
 - Node.js 18+
 - npm 8+ или yarn 1.22+
-- Современный браузер с поддержкой WebGL и WebAssembly
+- Современный браузер с поддержкой WebGL
 - Минимум 4GB RAM
 - Для VR-функционала: поддержка WebXR
 
@@ -56,19 +55,17 @@ src/
 ├── stores/        # Pinia хранилища
 ├── composables/   # Vue композиции
 ├── services/      # API клиенты
-├── utils/         # Утилиты
-└── types/         # TypeScript типы
+└── utils/         # Утилиты
 ```
 
 ## Разработка
 
 ### Рекомендуемое IDE
-- VS Code с Vue и TypeScript расширениями
+- VS Code с Vue расширениями
 - WebStorm
 
 ### Расширения VS Code
 - Volar
-- TypeScript Vue Plugin
 - Tailwind CSS IntelliSense
 - ESLint
 - Prettier
@@ -81,9 +78,6 @@ npm run lint
 
 # Форматирование кода
 npm run format
-
-# Проверка типов TypeScript
-npm run type-check
 
 # Запуск unit-тестов
 npm run test:unit
