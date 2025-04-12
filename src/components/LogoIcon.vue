@@ -13,21 +13,11 @@
           <filter id="blur3" x="-100%" y="-100%" width="300%" height="300%">
             <feGaussianBlur in="SourceGraphic" stdDeviation="12" />
           </filter>
-          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#60A5FA">
-              <animate attributeName="stop-color" values="#60A5FA; #A855F7; #60A5FA" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-            <stop offset="100%" stop-color="#A855F7">
-              <animate attributeName="stop-color" values="#A855F7; #60A5FA; #A855F7" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-          </linearGradient>
         </defs>
-
+        
         <!-- Слои свечения -->
         <g transform="translate(0.000000,938.000000) scale(0.100000,-0.100000)">
-          <path class="glow3" filter="url(#blur3)" fill="#60A5FA" opacity="0.2" d="M1680 9375 c-8 -2 -61 -9 -117 -15 l-103 -12 -10 -37 c-5 -20 -30
+          <path class="glow3" filter="url(#blur3)" d="M1680 9375 c-8 -2 -61 -9 -117 -15 l-103 -12 -10 -37 c-5 -20 -30
 -101 -54 -181 -24 -80 -42 -147 -40 -149 2 -2 38 2 81 8 372 52 767 -12 1099
 -178 103 -53 264 -150 264 -161 0 -4 -1794 -1946 -1864 -2018 -11 -11 -23 -2
 -70 55 -368 441 -538 1021 -470 1605 l7 56 -176 -56 -176 -56 -15 -85 c-141
@@ -69,7 +59,7 @@
 -192 844 33 30 843 186 981 189 l43 1 -207 -277z m1920 -77 c59 -38 106 -76
 105 -83 -5 -22 -1703 -2182 -1715 -2183 -15 0 -219 201 -281 276 l-42 51 397
 489 c218 269 599 738 845 1042 l449 552 67 -36 c37 -20 116 -69 175 -108z" />
-          <path class="glow2" filter="url(#blur2)" fill="#818CF8" opacity="0.3" d="M1680 9375 c-8 -2 -61 -9 -117 -15 l-103 -12 -10 -37 c-5 -20 -30
+          <path class="glow2" filter="url(#blur2)" d="M1680 9375 c-8 -2 -61 -9 -117 -15 l-103 -12 -10 -37 c-5 -20 -30
 -101 -54 -181 -24 -80 -42 -147 -40 -149 2 -2 38 2 81 8 372 52 767 -12 1099
 -178 103 -53 264 -150 264 -161 0 -4 -1794 -1946 -1864 -2018 -11 -11 -23 -2
 -70 55 -368 441 -538 1021 -470 1605 l7 56 -176 -56 -176 -56 -15 -85 c-141
@@ -111,7 +101,7 @@
 -192 844 33 30 843 186 981 189 l43 1 -207 -277z m1920 -77 c59 -38 106 -76
 105 -83 -5 -22 -1703 -2182 -1715 -2183 -15 0 -219 201 -281 276 l-42 51 397
 489 c218 269 599 738 845 1042 l449 552 67 -36 c37 -20 116 -69 175 -108z" />
-          <path class="glow1" filter="url(#blur1)" fill="#A855F7" opacity="0.4" d="M1680 9375 c-8 -2 -61 -9 -117 -15 l-103 -12 -10 -37 c-5 -20 -30
+          <path class="glow1" filter="url(#blur1)" d="M1680 9375 c-8 -2 -61 -9 -117 -15 l-103 -12 -10 -37 c-5 -20 -30
 -101 -54 -181 -24 -80 -42 -147 -40 -149 2 -2 38 2 81 8 372 52 767 -12 1099
 -178 103 -53 264 -150 264 -161 0 -4 -1794 -1946 -1864 -2018 -11 -11 -23 -2
 -70 55 -368 441 -538 1021 -470 1605 l7 56 -176 -56 -176 -56 -15 -85 c-141
@@ -177,21 +167,60 @@
   height: 100%;
 }
 
-.glow1,
-.glow2,
-.glow3 {
-  animation: glowPulse 3s ease-in-out infinite;
+.glow1 {
+  animation: glowPulse1 4s ease-in-out infinite;
 }
 
-@keyframes glowPulse {
+.glow2 {
+  animation: glowPulse2 4s ease-in-out infinite;
+}
 
-  0%,
-  100% {
+.glow3 {
+  animation: glowPulse3 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse1 {
+  0% {
+    fill: #A855F7;
     opacity: 0.2;
   }
-
   50% {
+    fill: #EC4899;
     opacity: 0.4;
+  }
+  100% {
+    fill: #A855F7;
+    opacity: 0.2;
+  }
+}
+
+@keyframes glowPulse2 {
+  0% {
+    fill: #818CF8;
+    opacity: 0.2;
+  }
+  50% {
+    fill: #DB2777;
+    opacity: 0.4;
+  }
+  100% {
+    fill: #818CF8;
+    opacity: 0.2;
+  }
+}
+
+@keyframes glowPulse3 {
+  0% {
+    fill: #60A5FA;
+    opacity: 0.2;
+  }
+  50% {
+    fill: #BE185D;
+    opacity: 0.4;
+  }
+  100% {
+    fill: #60A5FA;
+    opacity: 0.2;
   }
 }
 </style>
