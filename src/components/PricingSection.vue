@@ -150,13 +150,17 @@ import AnimateOnScroll from './AnimateOnScroll.vue';
 .pricing-card {
   @apply bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10
          hover:bg-white/10 hover:border-white/20 transition-all duration-300
-         relative transform scale-90;
+         relative transform scale-90 md:scale-90;
   height: 100%;
+  /* На мобильных устройствах карточки будут нормального размера */
+  @apply scale-100;
 }
 
 .popular-plan {
-  @apply border-blue-500/30 scale-105 z-10;
+  @apply border-blue-500/30 z-10;
   box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
+  /* Масштаб только для десктопа */
+  @apply md:scale-105;
 }
 
 .popular-badge {
@@ -167,11 +171,15 @@ import AnimateOnScroll from './AnimateOnScroll.vue';
 
 /* Анимация при наведении */
 .pricing-card:not(.popular-plan):hover {
-  @apply scale-95;
+  @apply md:scale-95;
+  /* На мобильных меньше увеличение */
+  @apply scale-[1.02];
 }
 
 .popular-plan:hover {
-  @apply scale-110;
+  @apply md:scale-110;
+  /* На мобильных меньше увеличение */
+  @apply scale-[1.02];
 }
 
 /* Контейнер для карточек */
