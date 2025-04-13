@@ -21,8 +21,10 @@
         <AnimateOnScroll>
           <div class="process-card group">
             <div class="process-number">1</div>
-            <h3 class="text-xl font-semibold mb-2">Загрузка фото</h3>
-            <p class="text-gray-400">Загрузите ваши фотографии в любом формате и разрешении</p>
+            <div class="process-content">
+              <h3 class="text-xl font-semibold mb-2">Загрузка фото</h3>
+              <p class="text-gray-400">Загрузите ваши фотографии в любом формате и разрешении</p>
+            </div>
           </div>
         </AnimateOnScroll>
 
@@ -30,8 +32,10 @@
         <AnimateOnScroll>
           <div class="process-card group">
             <div class="process-number">2</div>
-            <h3 class="text-xl font-semibold mb-2">AI Обработка</h3>
-            <p class="text-gray-400">Наш ИИ анализирует и улучшает качество каждого изображения</p>
+            <div class="process-content">
+              <h3 class="text-xl font-semibold mb-2">AI Обработка</h3>
+              <p class="text-gray-400">Наш ИИ анализирует и улучшает качество каждого изображения</p>
+            </div>
           </div>
         </AnimateOnScroll>
 
@@ -39,8 +43,10 @@
         <AnimateOnScroll>
           <div class="process-card group">
             <div class="process-number">3</div>
-            <h3 class="text-xl font-semibold mb-2">3D Генерация</h3>
-            <p class="text-gray-400">Создание детализированной трехмерной модели из ваших фото</p>
+            <div class="process-content">
+              <h3 class="text-xl font-semibold mb-2">3D Генерация</h3>
+              <p class="text-gray-400">Создание детализированной трехмерной модели из ваших фото</p>
+            </div>
           </div>
         </AnimateOnScroll>
 
@@ -48,8 +54,10 @@
         <AnimateOnScroll>
           <div class="process-card group">
             <div class="process-number">4</div>
-            <h3 class="text-xl font-semibold mb-2">VR Доступ</h3>
-            <p class="text-gray-400">Мгновенный доступ к вашим воспоминаниям через VR-гарнитуру</p>
+            <div class="process-content">
+              <h3 class="text-xl font-semibold mb-2">VR Доступ</h3>
+              <p class="text-gray-400">Мгновенный доступ к вашим воспоминаниям через VR-гарнитуру</p>
+            </div>
           </div>
         </AnimateOnScroll>
       </div>
@@ -65,13 +73,26 @@ import AnimateOnScroll from './AnimateOnScroll.vue';
 .process-card {
   @apply bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10
          hover:bg-white/10 hover:border-white/20 transition-all duration-300
-         transform hover:scale-105;
+         transform hover:scale-105 min-h-[180px] flex flex-col;
+  height: 100%;
 }
 
 .process-number {
   @apply w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 
          flex items-center justify-center mb-4 text-2xl font-bold text-blue-400
-         group-hover:text-blue-300 transition-colors duration-300;
+         group-hover:text-blue-300 transition-colors duration-300 flex-shrink-0;
+}
+
+.process-content {
+  @apply flex flex-col justify-between flex-grow;
+}
+
+.process-content h3 {
+  @apply text-xl font-semibold mb-4;
+}
+
+.process-content p {
+  @apply text-gray-400 text-base leading-relaxed;
 }
 
 @keyframes fade-in {
