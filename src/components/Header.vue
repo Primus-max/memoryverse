@@ -11,12 +11,10 @@
         
         <!-- Десктопная навигация -->
         <div class="hidden md:flex space-x-8">
-          <a v-for="link in navLinks" 
-             :key="link.href" 
-             :href="link.href" 
-             class="nav-link">
-            {{ link.text }}
-          </a>
+          <a href="#features" class="nav-link">Возможности</a>
+          <a href="#process" class="nav-link">Как это работает</a>
+          <a href="#pricing" class="nav-link">Цены</a>
+          <a href="#contact" class="nav-link">Контакты</a>
         </div>
         
         <!-- Кнопка бургер-меню -->
@@ -67,17 +65,48 @@
       <div class="container mx-auto px-4 pt-24">
         <div class="flex flex-col items-center text-center">
           <div class="w-full max-w-sm space-y-4">
-            <a v-for="(link, index) in navLinks" 
-               :key="link.href" 
-               :href="link.href" 
-               class="mobile-menu-link group"
-               :style="{ animationDelay: `${index * 100}ms` }"
-               @click="closeMenu">
+            <a href="#features" class="mobile-menu-link group" @click="closeMenu">
               <div class="flex items-center justify-between py-4 px-6 rounded-2xl 
                           hover:bg-gradient-to-r hover:from-white/5 hover:to-transparent
                           border border-white/5 hover:border-white/10
                           transform hover:translate-x-2 hover:scale-[1.02]">
-                <span>{{ link.text }}</span>
+                <span>Возможности</span>
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" 
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+            <a href="#process" class="mobile-menu-link group" @click="closeMenu">
+              <div class="flex items-center justify-between py-4 px-6 rounded-2xl 
+                          hover:bg-gradient-to-r hover:from-white/5 hover:to-transparent
+                          border border-white/5 hover:border-white/10
+                          transform hover:translate-x-2 hover:scale-[1.02]">
+                <span>Как это работает</span>
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" 
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+            <a href="#pricing" class="mobile-menu-link group" @click="closeMenu">
+              <div class="flex items-center justify-between py-4 px-6 rounded-2xl 
+                          hover:bg-gradient-to-r hover:from-white/5 hover:to-transparent
+                          border border-white/5 hover:border-white/10
+                          transform hover:translate-x-2 hover:scale-[1.02]">
+                <span>Цены</span>
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" 
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+            <a href="#contact" class="mobile-menu-link group" @click="closeMenu">
+              <div class="flex items-center justify-between py-4 px-6 rounded-2xl 
+                          hover:bg-gradient-to-r hover:from-white/5 hover:to-transparent
+                          border border-white/5 hover:border-white/10
+                          transform hover:translate-x-2 hover:scale-[1.02]">
+                <span>Контакты</span>
                 <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" 
                      fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -85,8 +114,7 @@
               </div>
             </a>
             <button @click="closeMenu" 
-                    class="mobile-primary-button menu-button"
-                    :style="{ animationDelay: `${navLinks.length * 100}ms` }">
+                    class="mobile-primary-button menu-button">
               Попробовать бесплатно
             </button>
           </div>
@@ -103,13 +131,6 @@ import LogoIcon from './LogoIcon.vue';
 
 const isMenuOpen = ref(false);
 
-const navLinks = [
-  { href: '#features', text: 'Возможности' },
-  { href: '#how-it-works', text: 'Процесс' },
-  { href: '#pricing', text: 'Тарифы' },
-  { href: '#contact', text: 'Контакты' }
-];
-
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
   if (isMenuOpen.value) {
@@ -117,93 +138,57 @@ const toggleMenu = () => {
   } else {
     document.body.style.overflow = '';
   }
-}
+};
 
 const closeMenu = () => {
   isMenuOpen.value = false;
   document.body.style.overflow = '';
-}
+};
 </script>
 
 <style scoped>
 .nav-link {
-  @apply relative text-gray-300 hover:text-white transition-colors duration-300;
-}
-
-.nav-link::after {
-  @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 
-         bg-gradient-to-r from-blue-400 to-purple-400 
-         transition-all duration-300;
-}
-
-.nav-link:hover::after {
-  @apply w-full;
-}
-
-.mobile-menu-bg {
-  background: radial-gradient(circle at top right, rgba(96, 165, 250, 0.03), transparent 50%),
-              radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.03), transparent 50%),
-              linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.98));
-}
-
-.mobile-menu-link {
-  @apply block text-xl font-medium text-white/90
-         transition-all duration-300;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.menu-open .mobile-menu-link {
-  animation: slideIn 0.5s ease forwards;
-}
-
-.mobile-primary-button {
-  @apply bg-gradient-to-r from-blue-500 to-purple-500 
-         text-white text-xl font-medium
-         px-8 py-4 rounded-2xl mt-8
-         hover:from-blue-600 hover:to-purple-600 
-         transition-all duration-300
-         w-full transform hover:scale-[1.02];
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.menu-open .mobile-primary-button {
-  animation: slideIn 0.5s ease forwards;
+  @apply text-gray-300 hover:text-white transition-colors duration-300;
 }
 
 .primary-button {
-  @apply bg-gradient-to-r from-blue-500 to-purple-500 
-         text-white px-6 py-2 rounded-lg 
-         hover:from-blue-600 hover:to-purple-600 
+  @apply px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 
+         rounded-xl text-white hover:from-blue-600 hover:to-purple-600 
          transition-all duration-300;
 }
 
 .scale-button {
-  @apply hover:scale-105 active:scale-95;
+  @apply hover:scale-105 transition-transform duration-300;
+}
+
+.mobile-menu-bg {
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.1), transparent 50%);
+  backdrop-filter: blur(24px);
+}
+
+.mobile-menu-link {
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.menu-button {
+  animation: slideIn 0.5s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.close-button {
-  opacity: 0;
-  transform: translateY(-20px) scale(0.8);
-  animation: slideInButton 0.5s ease forwards;
-}
-
-@keyframes slideInButton {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
+.menu-open .mobile-menu-link:nth-child(1) { animation-delay: 0s; }
+.menu-open .mobile-menu-link:nth-child(2) { animation-delay: 0.1s; }
+.menu-open .mobile-menu-link:nth-child(3) { animation-delay: 0.2s; }
+.menu-open .mobile-menu-link:nth-child(4) { animation-delay: 0.3s; }
 </style> 

@@ -9,6 +9,8 @@
   
   body {
     @apply bg-gray-900 text-white;
+    background: linear-gradient(to bottom, #000913, #001324);
+    min-height: 100vh;
   }
 }
 
@@ -20,4 +22,8 @@
   .card {
     @apply bg-blue-900/50 p-6 rounded-xl backdrop-blur-md;
   }
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
 } 

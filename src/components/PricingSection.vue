@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 px-4">
+  <section id="pricing" class="py-20 px-4">
     <div class="container mx-auto max-w-6xl">
       <!-- Заголовок секции -->
       <AnimateOnScroll>
