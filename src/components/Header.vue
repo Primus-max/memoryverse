@@ -148,7 +148,17 @@ const closeMenu = () => {
 
 <style scoped>
 .nav-link {
-  @apply text-gray-300 hover:text-white transition-colors duration-300;
+  @apply text-gray-300 hover:text-white transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 bottom-[-4px] w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400
+         transition-all duration-300 rounded-full opacity-0;
+}
+
+.nav-link:hover::after {
+  @apply w-full opacity-100;
 }
 
 .primary-button {
