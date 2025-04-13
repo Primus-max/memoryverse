@@ -2,11 +2,11 @@
   <section class="relative min-h-screen flex items-center justify-center px-4 py-20">
     <div class="text-center max-w-4xl mx-auto">
       <!-- Заголовок -->
-      <h1 class="mb-6">
-        <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2">
+      <h1 class="mb-6 animate-fade-in">
+        <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 animate-slide-up" style="animation-delay: 200ms;">
           Оживляем
         </span>
-        <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+        <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold animate-slide-up" style="animation-delay: 400ms;">
           <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             воспоминания
           </span>
@@ -14,12 +14,12 @@
       </h1>
 
       <!-- Подзаголовок -->
-      <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 px-4">
+      <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 px-4 animate-fade-in animate-slide-up" style="animation-delay: 600ms;">
         Погрузитесь в прошлое с помощью передовых технологий. Создавайте виртуальные копии ваших воспоминаний и делитесь ими с близкими в формате VR.
       </p>
 
       <!-- Кнопки -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in" style="animation-delay: 800ms;">
         <button class="w-full sm:w-auto px-8 py-4 text-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300">
           Начать путешествие
         </button>
@@ -29,20 +29,20 @@
       </div>
 
       <!-- Статистика -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-        <div class="stat-item">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 1000ms;">
+        <div class="stat-item animate-slide-up" style="animation-delay: 1200ms;">
           <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             100K+
           </div>
           <div class="text-sm sm:text-base text-gray-400">Пользователей</div>
         </div>
-        <div class="stat-item">
+        <div class="stat-item animate-slide-up" style="animation-delay: 1400ms;">
           <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             50K+
           </div>
           <div class="text-sm sm:text-base text-gray-400">Воспоминаний</div>
         </div>
-        <div class="stat-item">
+        <div class="stat-item animate-slide-up" style="animation-delay: 1600ms;">
           <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
             98%
           </div>
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Индикатор прокрутки -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce animate-fade-in" style="animation-delay: 2000ms;">
         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
@@ -63,5 +63,35 @@
 <style scoped>
 .stat-item {
   @apply flex flex-col items-center p-4 rounded-2xl bg-white/5 backdrop-blur-lg;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+  opacity: 0;
 }
 </style> 
