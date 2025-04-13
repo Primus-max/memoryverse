@@ -184,7 +184,6 @@
 }
 
 @keyframes glowPulse {
-
   0%,
   100% {
     opacity: 0.2;
