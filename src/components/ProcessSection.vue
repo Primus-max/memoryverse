@@ -1,48 +1,106 @@
 <template>
-  <section id="how-it-works" class="py-32 relative">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-20">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Как это работает</span>
-      </h2>
-      <div class="grid md:grid-cols-4 gap-8 relative">
-        <div class="process-line"></div>
-        <div class="process-card">
-          <div class="process-number">01</div>
-          <h3 class="text-xl font-bold mb-4">Загрузка фото</h3>
-          <p class="text-gray-300">Загрузите ваши фотографии через приложение или веб-интерфейс</p>
-        </div>
-        <div class="process-card">
-          <div class="process-number">02</div>
-          <h3 class="text-xl font-bold mb-4">AI Обработка</h3>
-          <p class="text-gray-300">Наши нейросети анализируют и улучшают качество изображений</p>
-        </div>
-        <div class="process-card">
-          <div class="process-number">03</div>
-          <h3 class="text-xl font-bold mb-4">3D Генерация</h3>
-          <p class="text-gray-300">Создание детализированной 3D модели пространства</p>
-        </div>
-        <div class="process-card">
-          <div class="process-number">04</div>
-          <h3 class="text-xl font-bold mb-4">VR Доступ</h3>
-          <p class="text-gray-300">Мгновенный доступ к вашим воспоминаниям через VR</p>
-        </div>
+  <section class="py-20 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <!-- Заголовок секции -->
+      <AnimateOnScroll>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
+          Как это <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">работает</span>
+        </h2>
+      </AnimateOnScroll>
+      
+      <!-- Описание -->
+      <AnimateOnScroll>
+        <p class="text-gray-400 text-center max-w-2xl mx-auto mb-16">
+          Простой процесс создания виртуальных воспоминаний в четыре шага
+        </p>
+      </AnimateOnScroll>
+
+      <!-- Шаги процесса -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Шаг 1 -->
+        <AnimateOnScroll>
+          <div class="process-card group">
+            <div class="process-number">1</div>
+            <h3 class="text-xl font-semibold mb-2">Загрузка фото</h3>
+            <p class="text-gray-400">Загрузите ваши фотографии в любом формате и разрешении</p>
+          </div>
+        </AnimateOnScroll>
+
+        <!-- Шаг 2 -->
+        <AnimateOnScroll>
+          <div class="process-card group">
+            <div class="process-number">2</div>
+            <h3 class="text-xl font-semibold mb-2">AI Обработка</h3>
+            <p class="text-gray-400">Наш ИИ анализирует и улучшает качество каждого изображения</p>
+          </div>
+        </AnimateOnScroll>
+
+        <!-- Шаг 3 -->
+        <AnimateOnScroll>
+          <div class="process-card group">
+            <div class="process-number">3</div>
+            <h3 class="text-xl font-semibold mb-2">3D Генерация</h3>
+            <p class="text-gray-400">Создание детализированной трехмерной модели из ваших фото</p>
+          </div>
+        </AnimateOnScroll>
+
+        <!-- Шаг 4 -->
+        <AnimateOnScroll>
+          <div class="process-card group">
+            <div class="process-number">4</div>
+            <h3 class="text-xl font-semibold mb-2">VR Доступ</h3>
+            <p class="text-gray-400">Мгновенный доступ к вашим воспоминаниям через VR-гарнитуру</p>
+          </div>
+        </AnimateOnScroll>
       </div>
     </div>
   </section>
 </template>
 
+<script setup>
+import AnimateOnScroll from './AnimateOnScroll.vue';
+</script>
+
 <style scoped>
 .process-card {
-  @apply relative bg-gradient-to-b from-white/5 to-white/[0.02] p-8 rounded-2xl backdrop-blur-xl
-         border border-white/10 hover:border-white/20 transition-all duration-300;
+  @apply bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10
+         hover:bg-white/10 hover:border-white/20 transition-all duration-300
+         transform hover:scale-105;
 }
 
 .process-number {
-  @apply text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4;
+  @apply w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+         flex items-center justify-center mb-4 text-2xl font-bold text-blue-400
+         group-hover:text-blue-300 transition-colors duration-300;
 }
 
-.process-line {
-  @apply absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform -translate-y-1/2;
-  opacity: 0.2;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+  opacity: 0;
 }
 </style> 
