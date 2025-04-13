@@ -150,16 +150,40 @@ import AnimateOnScroll from './AnimateOnScroll.vue';
 .pricing-card {
   @apply bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10
          hover:bg-white/10 hover:border-white/20 transition-all duration-300
-         relative;
+         relative transform scale-90;
+  height: 100%;
 }
 
 .popular-plan {
-  @apply border-blue-500/30 scale-105;
+  @apply border-blue-500/30 scale-105 z-10;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
 }
 
 .popular-badge {
   @apply absolute -top-4 left-1/2 transform -translate-x-1/2
          bg-gradient-to-r from-blue-500 to-purple-500 text-white
-         px-4 py-1 rounded-full text-sm font-medium;
+         px-6 py-1.5 rounded-full text-sm font-medium;
+}
+
+/* Анимация при наведении */
+.pricing-card:not(.popular-plan):hover {
+  @apply scale-95;
+}
+
+.popular-plan:hover {
+  @apply scale-110;
+}
+
+/* Контейнер для карточек */
+.grid {
+  @apply relative;
+}
+
+/* Затемнение фона под центральной карточкой */
+.popular-plan::before {
+  content: '';
+  @apply absolute inset-0 rounded-2xl;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%);
+  z-index: -1;
 }
 </style> 
