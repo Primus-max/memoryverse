@@ -1,57 +1,67 @@
 <template>
-  <section class="relative min-h-screen flex items-center">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-6xl md:text-8xl font-bold mb-8 hero-text">
-          Оживляем <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">воспоминания</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-12 hero-subtitle">
-          Погрузитесь в прошлое с помощью передовых технологий. Создавайте виртуальные копии ваших воспоминаний и делитесь ими с близкими в формате VR.
-        </p>
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
-          <button class="primary-button-large scale-button">
-            Начать путешествие
-          </button>
-          <button class="secondary-button-large scale-button">
-            Смотреть демо
-          </button>
+  <section class="relative min-h-screen flex items-center justify-center px-4 py-20">
+    <div class="text-center max-w-4xl mx-auto">
+      <!-- Заголовок -->
+      <h1 class="mb-6">
+        <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2">
+          Оживляем
+        </span>
+        <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+          <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            воспоминания
+          </span>
+        </span>
+      </h1>
+
+      <!-- Подзаголовок -->
+      <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 px-4">
+        Погрузитесь в прошлое с помощью передовых технологий. Создавайте виртуальные копии ваших воспоминаний и делитесь ими с близкими в формате VR.
+      </p>
+
+      <!-- Кнопки -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <button class="w-full sm:w-auto px-8 py-4 text-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300">
+          Начать путешествие
+        </button>
+        <button class="w-full sm:w-auto px-8 py-4 text-lg bg-white/5 text-white rounded-xl hover:bg-white/10 backdrop-blur-lg transform hover:scale-105 transition-all duration-300">
+          Смотреть демо
+        </button>
+      </div>
+
+      <!-- Статистика -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+        <div class="stat-item">
+          <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            100K+
+          </div>
+          <div class="text-sm sm:text-base text-gray-400">Пользователей</div>
         </div>
-        <div class="mt-12 flex justify-center items-center space-x-8">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-blue-400">100K+</div>
-            <div class="text-gray-400">Пользователей</div>
+        <div class="stat-item">
+          <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            50K+
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-purple-400">50K+</div>
-            <div class="text-gray-400">Воспоминаний</div>
+          <div class="text-sm sm:text-base text-gray-400">Воспоминаний</div>
+        </div>
+        <div class="stat-item">
+          <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+            98%
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-pink-400">98%</div>
-            <div class="text-gray-400">Довольных клиентов</div>
-          </div>
+          <div class="text-sm sm:text-base text-gray-400">Довольных клиентов</div>
         </div>
       </div>
-    </div>
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
+
+      <!-- Индикатор прокрутки -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.primary-button-large {
-  @apply bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-4 rounded-full text-xl font-medium
-         hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25;
-}
-
-.secondary-button-large {
-  @apply bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-4 rounded-full text-xl font-medium
-         hover:bg-white/20 transition-all duration-300;
-}
-
-.scale-button {
-  @apply hover:scale-105 transition-transform duration-300;
+.stat-item {
+  @apply flex flex-col items-center p-4 rounded-2xl bg-white/5 backdrop-blur-lg;
 }
 </style> 
