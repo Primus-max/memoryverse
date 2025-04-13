@@ -161,7 +161,7 @@
 
 <style scoped>
 .logo-wrapper {
-  @apply relative w-12 h-12;
+  @apply relative w-10 h-10;
   overflow: visible;
 }
 
